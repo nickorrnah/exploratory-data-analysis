@@ -2,7 +2,6 @@ library(plotly)
 library(stringr)
 library(dplyr)
 
-
 twitch_df <- read.csv('data.csv')
 
 hours_watched <- twitch_df$Hours.watched..mins.
@@ -31,13 +30,11 @@ pie_chart <- plot_ly(hours_by_year_df, labels = ~Year, values = ~hours_watched,
                      textinfo = 'label+percent',
                      insidetextfont = list(color = '#FFFFFF'),
                      hoverinfo = 'text',
-                     text = ~paste('$', hours_watched, ' billions'),
+                     text = ~paste(signif(hours_watched / 100000000 , 4), ' hundred-million hours'),
                      marker = list(colors = colors,
                                    line = list(color = '#FFFFFF', width = 1)))
 
 pie_chart <- pie_chart %>% layout(title = 'Percentage of Hours Watched by Year',
                                   xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
                                   yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
-
-print(pie_chart)
 

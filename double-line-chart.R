@@ -22,4 +22,4 @@ fig <- fig %>% layout(title = "Hours Streamed and Watched by Month",
                       xaxis = list(title = "Months"),
                       yaxis = list (title = "Hours (millions)"))
 
-print(fig)
+

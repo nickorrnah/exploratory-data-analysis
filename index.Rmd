@@ -1,1 +1,49 @@
+---
+title: "Exploratory Data Analysis"
+authors: Nick Orr and Aaron Guo
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
 
+# Intro
+
+Twitch is a live-streaming service that allows streamers (people who choose to create content on the platform) to share their experiences with viewers (people who choose to watch) live.  These experiences are typically video-game related, but other experiences such as music, exploring cities around the world, friendly chats, and art are also common on the website.
+
+The data set we will be discussing today contains monthly usage data statistics, such as hours watched and hours streamed.  This data was collected by Twitch and is all publicly available information.  The dataset itself has been compiled by a Twitch community member who goes by the name of sullygnome.
+
+# Summary
+```{r, include=FALSE}
+source("summary.R", local = knitr::knit_global())
+```
+Over the span of the dataset, the month with the highest average viewers was `r summary_info$max_avg_view_month`. The peak number of concurrent viewers was `r summary_info$max_viewers` million. The average ratio of hours watched to hours streamed was approximately `r summary_info$streamed_watched_ratio` **:** 1.
+
+Grouping data into pre-covid (start of data to February 2020) and post-covid (March 2020 to June 2022) eras, we found Twitch's average monthly hours watched to be `r summary_info$pre_covid_avg` hundred-million hours during the pre-covid era. Post-covid, this average rose `r summary_info$percent_difference` times, to `r summary_info$post_covid_avg` hundred-million hours watched monthly.
+
+# Aggregate Data Table
+```{r, include=FALSE}
+source("summary-table.R", local = knitr::knit_global())
+```
+
+# Lifetime Hours Watched vs. Hours Streamed 
+```{r, include=FALSE}
+source("double-line-chart.R", local = knitr::knit_global())
+```
+`r fig`
+When analyzing the growth of a platform, it is important to look at the many different dimensions in which that platform can grow.  The purpose of this double-line chart is to see if Twitch's growth is multi-dimensional.  
+
+The chart clearly shows that Twitch grew in both hours watched and hours streamed, meaning its growth was multi-dimensional.  Furthermore, a pattern arises that shows that for every hour streamed on Twitch, there are approximately 30 hours watched.  This is an interesting relationship that may be worth investigating further.
+
+# Chart 2
+```{r, include=FALSE}
+source("bar-chart.R", local = knitr::knit_global())
+```
+Bar chart of peak viewership by month.
+
+# Total Hours Watched by Year 
+```{r, include=FALSE}
+source("pie-chart.R", local = knitr::knit_global())
+```
+`r pie_chart`
+When dealing with massive numbers such as hundred-millions of hours, it becomes hard to keep things in perspective of one another.  This pie-chart takes these hard to comprehend numbers and puts into perspective just how massive the growth of the platform in 2020 was with respect to other years.
