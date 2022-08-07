@@ -20,8 +20,8 @@ annualviewers_df <- data.frame(year, peakviews)
 
 bar<- plot_ly(annualviewers_df, labels = ~year, values = ~peakviews,
                    type = 'barplot',
-                   textpostion = 'inside',
-                   textinfo = 'label+percent',
+                   textpostion = 'outside',
+                   textinfo = 'label',
                    insidetextfont = list(color = '#FFFFFF'),
                    hoverinfo = 'text',
                    text = ~paste(peakviews),
