@@ -5,5 +5,6 @@ library(data.table)
 
 twitch_df <- read.csv("twitch.csv")
 twitch_aggregate_df <- twitch_df %>% group_by(Year)
+twitch_aggregate_df <- twitch_df[-c(7,9:11)]
 View(twitch_aggregate_df)
   
