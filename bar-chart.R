@@ -31,4 +31,3 @@ bar_chart <- bar_chart %>% layout( title = "Peak Viewers for each Year on Twitch
                                    xaxis = list(title = "Year"),
                                    yaxis = list(title = "Viewers (millions)"))
 
-print(bar_chart)
