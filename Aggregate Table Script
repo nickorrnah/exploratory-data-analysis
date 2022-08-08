@@ -1,6 +1,9 @@
 library(plotly)
 library(stringr)
 library(dplyr)
+library(data.table)
 
 twitch_df <- read.csv("twitch.csv")
-
+twitch_aggregate_df <- twitch_df %>% group_by(Year)
+View(twitch_aggregate_df)
+  
