@@ -1,0 +1,6 @@
+library(plotly)
+library(stringr)
+library(dplyr)
+
+twitch_df <- read.csv("twitch.csv")
+
