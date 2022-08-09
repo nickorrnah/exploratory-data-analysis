@@ -23,7 +23,7 @@ Grouping data into pre-covid (start of data to February 2020) and post-covid (Ma
 
 # Aggregate Data Table
 ```{r, include=FALSE}
-source("summary-table.R", local = knitr::knit_global())
+source("Aggregate Table Script.R", local = knitr::knit_global())
 ```
 
 # Lifetime Hours Watched vs. Hours Streamed 
