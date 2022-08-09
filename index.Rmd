@@ -36,11 +36,11 @@ When analyzing the growth of a platform, it is important to look at the many dif
 
 The chart clearly shows that Twitch grew in both hours watched and hours streamed, meaning its growth was multi-dimensional.  Furthermore, a pattern arises that shows that for every hour streamed on Twitch, there are approximately 30 hours watched.  This is an interesting relationship that may be worth investigating further.
 
-# Peak Viewership by Month
+# Peak Viewership by Year
 ```{r, include=FALSE}
 source("bar-chart.R", local = knitr::knit_global())
 ```
-This is a bar chart of peak viewership by month. This shows the when Twitch has the most traffic, and the purpose of this is to document Twitch's growth and expansion.
+This is a bar chart of peak viewership by year. This shows the when Twitch has the most traffic, and the purpose of this is to document Twitch's growth and expansion.
 
 This chart clearly shows that as the years go by, Twitch is only growing and getting bigger, as the peak viewership is constantly increasing, reaching new records and surpassing the previous. The relations ship between the two axis are linear, as they both increase with each other. 
 
