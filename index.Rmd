@@ -7,13 +7,13 @@ output:
   pdf_document: default
 ---
 
-# Intro
+## Intro
 
 Twitch is a live-streaming service that allows streamers (people who choose to create content on the platform) to share their experiences with viewers (people who choose to watch) live.  These experiences are typically video-game related, but other experiences such as music, exploring cities around the world, friendly chats, and art are also common on the website.
 
 The data set we will be discussing today contains monthly usage data statistics, such as hours watched and hours streamed.  This data was collected by Twitch and is all publicly available information.  The dataset itself has been compiled by a Twitch community member who goes by the name of sullygnome.
 
-# Summary
+## Summary
 ```{r, include=FALSE}
 source("summary.R", local = knitr::knit_global())
 ```
@@ -21,13 +21,12 @@ Over the span of the dataset, the month with the highest average viewers was `r 
 
 Grouping data into pre-covid (start of data to February 2020) and post-covid (March 2020 to June 2022) eras, we found Twitch's average monthly hours watched to be `r summary_info$pre_covid_avg` hundred-million hours during the pre-covid era. Post-covid, this average rose `r summary_info$percent_difference` times, to `r summary_info$post_covid_avg` hundred-million hours watched monthly.
 
-# Aggregate Data Table
-```{r, include=FALSE}
-source("Aggregate Table Script.R", local = knitr::knit_global())
-```
-After consideration, only the essiential columns were kept.
+## Aggregate Data Table
+[View Aggregate Data Table here](https://github.com/nickorrnah/exploratory-data-analysis/blob/main/Aggregate%20Data.csv)
 
-# Lifetime Hours Watched vs. Hours Streamed 
+I grouped the data by year in descending order to show the most recent data, and got rid of the unused variables, leaving behind on the important ones, all column names are readable so no changes were required.
+
+## Lifetime Hours Watched vs. Hours Streamed 
 ```{r, include=FALSE}
 source("double-line-chart.R", local = knitr::knit_global())
 ```
@@ -36,15 +35,15 @@ When analyzing the growth of a platform, it is important to look at the many dif
 
 The chart clearly shows that Twitch grew in both hours watched and hours streamed, meaning its growth was multi-dimensional.  Furthermore, a pattern arises that shows that for every hour streamed on Twitch, there are approximately 30 hours watched.  This is an interesting relationship that may be worth investigating further.
 
-# Peak Viewership by Year
-```{r, include=FALSE}
-source("bar-chart.R", local = knitr::knit_global())
+## Peak Viewership by Year
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("Bar.png", error = FALSE)
 ```
 This is a bar chart of peak viewership by year. This shows the when Twitch has the most traffic, and the purpose of this is to document Twitch's growth and expansion.
 
-This chart clearly shows that as the years go by, Twitch is only growing and getting bigger, as the peak viewership is constantly increasing, reaching new records and surpassing the previous. The relations ship between the two axis are linear, as they both increase with each other. 
+This chart clearly shows that as the years go by, Twitch is only growing and getting bigger, as the peak viewership is constantly increasing, reaching new records and surpassing the previous. The relationship between the two axis are linear, as they both increase with each other. 
 
-# Total Hours Watched by Year 
+## Total Hours Watched by Year 
 ```{r, include=FALSE}
 source("pie-chart.R", local = knitr::knit_global())
 ```
